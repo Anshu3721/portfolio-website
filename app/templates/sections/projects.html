@@ -1,0 +1,256 @@
+<section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="section-title">My Projects</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Check out some of my recent work</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in projects %}
+            <div class="project-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="project-image h-64">
+                    <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+                    <div class="project-overlay">
+                        <a href="{{ project.link }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="https://github.com/Anshu3721?tab=repositories" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github mr-2"></i> See More on GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="section-title">My Skills</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Technologies I work with</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Technical Skills -->
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Technical Skills</h3>
+                
+                <div class="space-y-6">
+                    {% for skill in skills %}
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">{{ skill.name }}</span>
+                            <span class="text-gray-500 dark:text-gray-400">{{ skill.percentage }}%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="skill-progress h-2.5 rounded-full" style="width: {{ skill.percentage }}%"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Tools & Technologies -->
+            <div data-aos="fade-left" data-aos-duration="1000">
+                <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Tools & Technologies</h3>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="tech-icon-card">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fab fa-flask"></i>
+                        <span>Flask</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-cloud"></i>
+                        <span>GCP</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Power BI</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-brain"></i>
+                        <span>NLP</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-robot"></i>
+                        <span>ML</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-cogs"></i>
+                        <span>Automation</span>
+                    </div>
+                    <div class="tech-icon-card">
+                        <i class="fas fa-table"></i>
+                        <span>Pandas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="section-title">My Experience</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Professional journey</p>
+        </div>
+        
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="timeline-line"></div>
+            
+            <!-- Timeline items -->
+            <div class="space-y-12">
+                <div class="timeline-item timeline-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2023 - Present</div>
+                        <h3 class="timeline-title">Data Analyst</h3>
+                        <h4 class="timeline-company">Nokia (Elikem Software Pvt Ltd)</h4>
+                        <p class="timeline-description">Designed and implemented end-to-end automation solutions for telecom use cases, reducing client analysis time by 90% and effort by 85%. Developed and deployed a Flask web application for interactive site mapping and data analysis, optimizing cell tower performance.</p>
+                        
+                        <!-- Key Achievements -->
+                        <div class="mt-4">
+                            <h5 class="font-semibold text-primary-600 dark:text-primary-400 mb-2">Key Achievements:</h5>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
+                                <li>Processed and analyzed data from multiple formats (Excel, CSV, JSON) to streamline automation tasks</li>
+                                <li>Built web applications with Python and Flask to support real-time data analysis and interactive features</li>
+                                <li>Automated data processing for telecom systems, improving operational efficiency by 90%</li>
+                                <li>Facilitated better network infrastructure and performance through high-quality data visualizations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2022 - Jul 2023</div>
+                        <h3 class="timeline-title">Data Analyst</h3>
+                        <h4 class="timeline-company">EagletFly Solutions</h4>
+                        <p class="timeline-description">Engineered robust Python automation frameworks to handle high-volume telecom datasets, slashing analysis time by 90% and cutting manual effort by 85%. Built scalable pipelines for real-time data validation and transformation, accelerating insight delivery.</p>
+                        
+                        <!-- Key Achievements -->
+                        <div class="mt-4">
+                            <h5 class="font-semibold text-primary-600 dark:text-primary-400 mb-2">Key Achievements:</h5>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
+                                <li>Developed Python scripts to automate repetitive data analysis tasks</li>
+                                <li>Created data validation frameworks that improved data quality and reliability</li>
+                                <li>Implemented real-time monitoring solutions for critical business metrics</li>
+                                <li>Collaborated with cross-functional teams to deliver insights that drove business decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Let's work together</p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Contact Information -->
+            <div class="w-full lg:w-5/12" data-aos="fade-right" data-aos-duration="1000">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+                
+                <div class="space-y-6">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>anshukumar3721@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 7903169898</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lottie Animation -->
+                <div class="mt-8 w-full h-64" id="contact-lottie"></div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="w-full lg:w-7/12" data-aos="fade-left" data-aos-duration="1000">
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Send Me a Message</h3>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success message (hidden by default) -->
+                    <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                        <p><i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
