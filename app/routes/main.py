@@ -48,7 +48,7 @@ def index():
     experiences = [
         {
             'title': 'Data Analyst',
-            'company': 'Nokia (Elikem Software Pvt Ltd)',
+            'company': '',
             'period': 'Sep 2023 - Present',
             'description': 'Designed and implemented end-to-end automation solutions for telecom use cases, reducing client analysis time by 90% and effort by 85%. Developed and deployed a Flask web application for interactive site mapping and data analysis, optimizing cell tower performance. Created dynamic network topologies using pyvis and networkx libraries, enhancing network visualization and performance.'
         },
